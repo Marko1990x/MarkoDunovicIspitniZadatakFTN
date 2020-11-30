@@ -26,4 +26,6 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="my_api_key">c66bf420</string>
+    <string name="search">Search</string>
+    <string name="enter_query_params_here">enter query params here</string>
 </resources>
