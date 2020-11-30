@@ -29,6 +29,7 @@ import retrofit2.Response;
 
 public class ActivitySearchMovie extends AppCompatActivity {
 
+    private String sentString;
     private SearchAdapter adapter;
     private RecyclerView searchResult;
 
@@ -62,6 +63,10 @@ public class ActivitySearchMovie extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movie_search_layout);
+
+        Intent intent = getIntent();
+        sentString = intent.getStringExtra("movie");
+        Toast.makeText(this, "This is the sent string: " + sentString, Toast.LENGTH_SHORT).show();
 
         adapter = new SearchAdapter();
 
