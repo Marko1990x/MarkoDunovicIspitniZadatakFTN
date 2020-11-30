@@ -246,6 +246,20 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
     //endregion implements custom toolbar with listeners
 
     @Override
+    public void searchApi(String position) {
+        String search = position;
+        Toast.makeText(this, "Search: "+search, Toast.LENGTH_SHORT).show();
+        //todo implement the api search here // search is the passed value from the user
+        //myItem1List.clear();
+        //mAdapter.notifyDataSetChanged();
+        // exapand api here
+       Intent intent = new Intent(MwainActivity.this, ActivitySearchMovie.class);
+       intent.putExtra("movie",search);
+       startActivity(intent);
+
+    }
+
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
@@ -454,18 +468,7 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
         saveData(my_time);
     }
 
-    @Override
-    public void searchApi(String position) {
-        String search = position;
-        Toast.makeText(this, "Search: "+search, Toast.LENGTH_SHORT).show();
-        //todo implement the api search here // search is the passed value from the user
-        //myItem1List.clear();
-        //mAdapter.notifyDataSetChanged();
-        // exapand api here
-        callService(search.trim());
 
-
-    }
 
 
 
