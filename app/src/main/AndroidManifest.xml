@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AAD10">
+        <activity android:name=".activity.DetailsActivity"></activity>
         <activity android:name=".activity.ActivitySearchMovie"></activity>
         <activity
             android:name=".activity.MwainActivity"

@@ -84,7 +84,7 @@ public class ActivitySearchMovie extends AppCompatActivity implements DialogApiS
             @Override
             public void onClick(View view, int position) {
                 Search movie = adapter.get(position);
-                Intent i = new Intent(ActivitySearchMovie.this, SecondActivity.class);
+                Intent i = new Intent(ActivitySearchMovie.this, DetailsActivity.class);
                 i.putExtra(KEY, movie.getImdbID());
                 startActivity(i);
             }

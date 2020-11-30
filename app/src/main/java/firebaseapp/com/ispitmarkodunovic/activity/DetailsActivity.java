@@ -1,5 +1,6 @@
 package firebaseapp.com.ispitmarkodunovic.activity;
 
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,7 +23,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     private void getDetail(String imdbKey) {
         HashMap<String, String> queryParams = new HashMap<>();
-        queryParams.put("apikey", "YOUR_KEY");
+        queryParams.put("apikey", "c66bf420");
         queryParams.put("i", imdbKey);
 
         Log.d("REZ", imdbKey);
@@ -56,6 +57,20 @@ public class DetailsActivity extends AppCompatActivity {
                 Toast.makeText(DetailsActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        String imdbKey = getIntent().getStringExtra(ActivitySearchMovie.KEY);
+        getDetail(imdbKey);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.details_activity_correct);
     }
 
 }
