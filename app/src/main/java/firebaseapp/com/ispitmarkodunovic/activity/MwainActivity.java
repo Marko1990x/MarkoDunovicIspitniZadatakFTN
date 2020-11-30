@@ -550,9 +550,9 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
 
     public void createInitList() {
         myItem1List = new ArrayList<>();
-        myItem1List.add(new Item1(R.drawable.ic_android, "My Line 1", "My Line 1"));
-        myItem1List.add(new Item1(R.drawable.ic_audio, "My Line 2", "My Line 2"));
-        myItem1List.add(new Item1(R.drawable.ic_sunny, "My Line 3", "My Line 3"));
+        myItem1List.add(new Item1(R.drawable.ic_android, "Use the Buttons", "My Line 1"));
+        myItem1List.add(new Item1(R.drawable.ic_audio, "Bellow For the", "My Line 2"));
+        myItem1List.add(new Item1(R.drawable.ic_sunny, "Api Methods", "My Line 3"));
     }
 
 
