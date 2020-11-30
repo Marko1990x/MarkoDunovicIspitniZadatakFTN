@@ -9,7 +9,8 @@
         android:id="@+id/searchText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/enter_query_params_here"/>
+        android:hint="@string/enter_query_params_here"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/searchBtn"

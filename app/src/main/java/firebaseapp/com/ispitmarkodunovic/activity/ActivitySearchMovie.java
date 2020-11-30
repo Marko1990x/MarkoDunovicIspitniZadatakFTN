@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 import firebaseapp.com.ispitmarkodunovic.R;
+import firebaseapp.com.ispitmarkodunovic.dialogs.DialogApiSearch;
 import firebaseapp.com.ispitmarkodunovic.models.mainactivity.SearchAdapter;
 import firebaseapp.com.ispitmarkodunovic.omdb.MyDividerItemDecoration;
 import firebaseapp.com.ispitmarkodunovic.omdb.OMDBApiService;
@@ -27,15 +28,16 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class ActivitySearchMovie extends AppCompatActivity {
+public class ActivitySearchMovie extends AppCompatActivity implements DialogApiSearch.dialogPositionListener4 {
 
     private String sentString;
     private SearchAdapter adapter;
     private RecyclerView searchResult;
+    private Intent intent;
 
-    public static String KEY  = "KEY";
+    public static String KEY = "KEY";
 
-    private void callService(String query){
+    private void callService(String query) {
         HashMap<String, String> queryParams = new HashMap<>();
         queryParams.put("apikey", "c66bf420");
         queryParams.put("s", query);
@@ -44,9 +46,9 @@ public class ActivitySearchMovie extends AppCompatActivity {
         call.enqueue(new Callback<OMDBResponse>() {
             @Override
             public void onResponse(Call<OMDBResponse> call, Response<OMDBResponse> response) {
-                if (response.code() == 200){
+                if (response.code() == 200) {
                     OMDBResponse resp = response.body();
-                    if(resp != null){
+                    if (resp != null) {
                         adapter.addItems(resp.getSearch());
                     }
                 }
@@ -63,13 +65,16 @@ public class ActivitySearchMovie extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movie_search_layout);
+        String sessionId = getIntent().getStringExtra("movie");
+        //Log.d("THIS IS THE ONE", "onCreate: " + sessionId);
+        //Toast.makeText(this, "it works now ?"+sessionId, Toast.LENGTH_SHORT).show();
+        makeBatmanMethod();
+        //sentString = intent.getStringExtra("movie");
+        //  Toast.makeText(this, "This is the correct one: "+sentString, Toast.LENGTH_LONG).show();
+    }
 
-        Intent intent = getIntent();
-        sentString = intent.getStringExtra("movie");
-        Toast.makeText(this, "This is the sent string: " + sentString, Toast.LENGTH_SHORT).show();
-
+    private void makeBatmanMethod() {
         adapter = new SearchAdapter();
-
         searchResult = findViewById(R.id.searchResult);
         searchResult.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         searchResult.setItemAnimator(new DefaultItemAnimator());
@@ -96,9 +101,18 @@ public class ActivitySearchMovie extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callService(query.getText().toString().trim());
+                DialogApiSearch dialogApiSearch = new DialogApiSearch();
+                dialogApiSearch.setCancelable(false);
+                dialogApiSearch.show(getSupportFragmentManager(), "splash screen settings");
+                //callService(query.getText().toString().trim());
             }
         });
 
+    }
+
+    @Override
+    public void searchApi(String position) {
+        String search = position;
+        callService(search);
     }
 }

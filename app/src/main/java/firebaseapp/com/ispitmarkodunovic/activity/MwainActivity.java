@@ -74,7 +74,7 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
     private static final String TAG = "Test Position";
     private String changedString1;
     private boolean isChangedString = false;
-    public static String KEY2 ="KEY";
+    public static String KEY2 = "KEY";
 
     private TextView textViewResult;
 
@@ -218,16 +218,13 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
         dialogCustom1ToolBar.show(getSupportFragmentManager(), "Delete from list by position");
     }
 
-    private void openSearchApi(){
 
-    }
 
     private void openDialogToolBarUpdate() {
         DialogAddToolBarButton addToolBarButton = new DialogAddToolBarButton();
         addToolBarButton.setCancelable(false);
         addToolBarButton.show(getSupportFragmentManager(), "Add to list by possition");
     }
-
 
 
     private void openAboutMeDialog() {
@@ -248,15 +245,9 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
     @Override
     public void searchApi(String position) {
         String search = position;
-        Toast.makeText(this, "Search: "+search, Toast.LENGTH_SHORT).show();
-        //todo implement the api search here // search is the passed value from the user
-        //myItem1List.clear();
-        //mAdapter.notifyDataSetChanged();
-        // exapand api here
-       Intent intent = new Intent(MwainActivity.this, ActivitySearchMovie.class);
-       intent.putExtra("movie",search);
-       startActivity(intent);
-
+        Intent intentx = new Intent(MwainActivity.this, ActivitySearchMovie.class);
+        intentx.putExtra("movie",search);
+        startActivity(intentx);
     }
 
     @Override
@@ -285,8 +276,8 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
         rootNode = FirebaseDatabase.getInstance();
         referenceText1 = rootNode.getReference("First_Data");
 
-       // Item1 item1 = new Item1(111,"asdsd", "adsada");
-         // if i pass the position to this whacky things are possible
+        // Item1 item1 = new Item1(111,"asdsd", "adsada");
+        // if i pass the position to this whacky things are possible
         referenceText1.setValue("item1");
         referenceText1.addValueEventListener(new ValueEventListener() {
             @Override
@@ -303,7 +294,8 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
         });
 
     }
-    private void callService(String query){
+
+    private void callService(String query) {
         HashMap<String, String> queryParams = new HashMap<>();
         queryParams.put("apikey", "c66bf420");
         queryParams.put("s", query);
@@ -312,12 +304,12 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
         call.enqueue(new Callback<OMDBResponse>() {
             @Override
             public void onResponse(Call<OMDBResponse> call, Response<OMDBResponse> response) {
-                if (response.code() == 200){
+                if (response.code() == 200) {
                     OMDBResponse resp = response.body();
-                    if(resp != null){
+                    if (resp != null) {
                         //adapter.addItems(resp.getSearch());
-                        Log.d(TAG, "onResponse: "+resp.getSearch());
-                        Toast.makeText(MwainActivity.this, ""+resp, Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "onResponse: " + resp.getSearch());
+                        Toast.makeText(MwainActivity.this, "" + resp, Toast.LENGTH_SHORT).show();
                         // adapter treba da se preradi ili doda drugi
                     }
                 }
@@ -326,13 +318,13 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
             @Override
             public void onFailure(Call<OMDBResponse> call, Throwable t) {
                 Toast.makeText(MwainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.d(TAG, "onFailure: "+ t.getMessage());
+                Log.d(TAG, "onFailure: " + t.getMessage());
             }
         });
 
     }
 
-    private void Retrofit2(String query){
+    private void Retrofit2(String query) {
         HashMap<String, String> queryParams = new HashMap<>();
         queryParams.put("apikey", "c66bf420");
         queryParams.put("s", query);
@@ -414,11 +406,13 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
         searchApiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MwainActivity.this, "From Api", Toast.LENGTH_SHORT).show();
-                DialogApiSearch dialogApiSearch = new DialogApiSearch();
+                //Toast.makeText(MwainActivity.this, "From Api", Toast.LENGTH_SHORT).show();
+               /* DialogApiSearch dialogApiSearch = new DialogApiSearch();
                 dialogApiSearch.setCancelable(false);
                 dialogApiSearch.show(getSupportFragmentManager(), "splash screen settings");
-
+*/
+                Intent intentLaunch = new Intent(MwainActivity.this,ActivitySearchMovie.class);
+                startActivity(intentLaunch);
             }
         });
         favoritesButton = findViewById(R.id.favoritesButtonAA);
@@ -467,9 +461,6 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
 
         saveData(my_time);
     }
-
-
-
 
 
     private void saveData(int mytime) {
@@ -541,18 +532,18 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
     }
 
     public void newIntent(int position) {
-        Intent intent = new Intent(MwainActivity.this, SecondActivity.class);
+        Intent intent3 = new Intent(MwainActivity.this, SecondActivity.class);
         // kljuc vrednost ne zaboravi
         // da ovde je bila greska
         // to get the actual value and not blasted null i have to send position on my array of items and extract
         // the data i want
-        intent.putExtra("position", position);
+        intent3.putExtra("position", position);
         //todo figure a way to fix this ;(
         String text1 = myItem1List.get(position).getmText1(); // i just copy the string in case someone clicks where he shoudn't
         String text2 = myItem1List.get(position).getmText2();
-        intent.putExtra("text1", text1);
-        intent.putExtra("text2", text2);
-        startActivity(intent);
+        intent3.putExtra("text1", text1);
+        intent3.putExtra("text2", text2);
+        startActivity(intent3);
     }
 
     public void createInitList() {
@@ -689,7 +680,6 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
         notificationManager.notify(2, notification);
 
     }
-
 
 
 }
