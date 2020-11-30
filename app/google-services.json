@@ -1,0 +1,115 @@
+{
+  "project_info": {
+    "project_number": "553556735224",
+    "firebase_url": "https://markodunovic.firebaseio.com",
+    "project_id": "markodunovic",
+    "storage_bucket": "markodunovic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553556735224:android:ca7ef3e8abd751597c770d",
+        "android_client_info": {
+          "package_name": "firebaseapp.com.ispitmarkodunovic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553556735224-4tfk2361e8v9fk5tnjohna2e1g41318l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJOSevEsb9lcTBbas66MuHcUqMHHPTHls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553556735224-4tfk2361e8v9fk5tnjohna2e1g41318l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553556735224:android:0ef3594b886fa3977c770d",
+        "android_client_info": {
+          "package_name": "firebaseapp.com.markodunovic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553556735224-ckbsho5iqpfqcp5jbjbm4rt1jmgia3qg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "firebaseapp.com.markodunovic",
+            "certificate_hash": "75e18645cb00871014aaa7a4933a78601c28cb0b"
+          }
+        },
+        {
+          "client_id": "553556735224-4tfk2361e8v9fk5tnjohna2e1g41318l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJOSevEsb9lcTBbas66MuHcUqMHHPTHls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553556735224-4tfk2361e8v9fk5tnjohna2e1g41318l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553556735224:android:378a61d27f6834f87c770d",
+        "android_client_info": {
+          "package_name": "github.io.marko1990x"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553556735224-l60gi5p2h7e31554f87ibkm7cmllsi92.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "github.io.marko1990x",
+            "certificate_hash": "fccc3e9be04da9e39c3e368b2b1e35fb85f28363"
+          }
+        },
+        {
+          "client_id": "553556735224-4tfk2361e8v9fk5tnjohna2e1g41318l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJOSevEsb9lcTBbas66MuHcUqMHHPTHls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553556735224-4tfk2361e8v9fk5tnjohna2e1g41318l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-3453484334714960~7570386181"
+    }
+  ],
+  "configuration_version": "1"
+}

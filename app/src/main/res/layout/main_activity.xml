@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                           xmlns:app="http://schemas.android.com/apk/res-auto"
+                                           xmlns:tools="http://schemas.android.com/tools"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           android:id="@+id/DrawerLayout"
+                                           tools:context=".activity.MwainActivity">
+
+
+    <!--
+    alrighty then this navigation drawer nonsence pisses me off really bad
+    1 in my main activity that calls the main_activity xml file i set it to drawerLayout
+    2 i move my relative layout to main_activity_recycler
+    3 i included the newly made xml in to this one
+    4 thankfully my custom toolbar still works and i dont have to fix that as well :(
+    -->
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Navigation_view"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/my_nav_drawer"
+        />
+
+     <include layout="@layout/main_activity_recycler"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
+

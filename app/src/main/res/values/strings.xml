@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">IspitniZadatakMarkoDunovic</string>
+    <string name="recyclerCardLine1">Line 1</string>
+    <string name="recyclerCardLine2">Line 2</string>
+    <string name="recyclerCardImageDescription">Img</string>
+    <string name="yeetButton">The Yeet Button</string>
+    <string name="new_activity_button">Start Details Activity With Current Possition</string>
+    <string name="secondAct_ImageDescription">Image Description</string>
+    <string name="initText">initial text</string>
+    <string name="toolbar_yeet_button">The Delete Button</string>
+    <string name="toolbar_add_button">Add Button</string>
+    <string name="dotted_line_item_1">Item 1</string>
+    <string name="dotted_line_item_2">Item 2</string>
+    <string name="dotted_line_item_3">Song</string>
+    <string name="toolbar_sub_item_1">Play</string>
+    <string name="toolbar_sub_item_2">Stop</string>
+    <string name="toolbar_about">About</string>
+    <string name="slash_settings">Splash Settings</string>
+    <string name="search_api">Search Api</string>
+    <string name="favorites">Favorites</string>
+    <string name="delete_all_drawer">Delete All</string>
+    <string name="settings_drawer_menu">settings</string>
+    <string name="logout">logout</string>
+    <string name="name">Marko Dunovic</string>
+    <string name="email">marko_dunovic@hotmail.com</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="my_api_key">c66bf420</string>
+</resources>

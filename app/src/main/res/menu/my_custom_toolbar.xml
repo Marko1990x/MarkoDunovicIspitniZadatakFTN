@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--items for my toolbar here-->
+    <item
+        android:id="@+id/toolbar_delete_button"
+        android:icon="@drawable/ic_yeet_toolbar_icon"
+        android:title="@string/toolbar_yeet_button"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_add_button"
+        android:icon="@drawable/ic_add_toolbar_icon"
+        android:title="@string/toolbar_add_button"
+        app:showAsAction="ifRoom" />
+
+    <!--items that show in the dotted lines because of the never attribute-->
+    <item
+        android:id="@+id/dotted_line_1_item"
+        android:title="@string/dotted_line_item_1"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/dotted_line_2_item"
+        android:title="@string/dotted_line_item_2"
+        app:showAsAction="never" />
+    <!--has sub items-->
+    <item
+        android:id="@+id/dotted_line_3_item"
+        android:title="@string/dotted_line_item_3"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/sub_toolbar_item1"
+                android:title="@string/toolbar_sub_item_1"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/sub_toolbar_item2"
+                android:title="@string/toolbar_sub_item_2"
+                app:showAsAction="never" />
+
+        </menu>
+    </item>
+    <item
+        android:id="@+id/about_toolbar_bwutton"
+        android:title="@string/toolbar_about"
+        app:showAsAction="never"
+        />
+
+</menu>
