@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,8 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-public class ActivitySearchMovie extends AppCompatActivity implements DialogApiSearch.dialogPositionListener4 {
+public class ActorDetails extends AppCompatActivity implements DialogApiSearch.dialogPositionListener4 {
 
     private String sentString;
     private SearchAdapter adapter;
@@ -56,7 +54,7 @@ public class ActivitySearchMovie extends AppCompatActivity implements DialogApiS
 
             @Override
             public void onFailure(Call<OMDBResponse> call, Throwable t) {
-                Toast.makeText(ActivitySearchMovie.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActorDetails.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -64,7 +62,7 @@ public class ActivitySearchMovie extends AppCompatActivity implements DialogApiS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.movie_search_layout);
+        setContentView(R.layout.movie_search_layout2);
         String sessionId = getIntent().getStringExtra("movie");
         //Log.d("THIS IS THE ONE", "onCreate: " + sessionId);
         //Toast.makeText(this, "it works now ?"+sessionId, Toast.LENGTH_SHORT).show();
@@ -84,7 +82,7 @@ public class ActivitySearchMovie extends AppCompatActivity implements DialogApiS
             @Override
             public void onClick(View view, int position) {
                 Search movie = adapter.get(position);
-                Intent i = new Intent(ActivitySearchMovie.this, DetailsActivity.class);
+                Intent i = new Intent(ActorDetails.this, DetailsActivity2.class);
                 i.putExtra(KEY, movie.getImdbID());
                 startActivity(i);
             }

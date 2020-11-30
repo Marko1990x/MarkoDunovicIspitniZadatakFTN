@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 
+import java.sql.Date;
 import java.util.HashMap;
 
 import firebaseapp.com.ispitmarkodunovic.R;
@@ -19,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DetailsActivity extends AppCompatActivity {
+public class DetailsActivity2 extends AppCompatActivity {
 
     private void getDetail(String imdbKey) {
         HashMap<String, String> queryParams = new HashMap<>();
@@ -37,22 +38,24 @@ public class DetailsActivity extends AppCompatActivity {
 
                     MovieInfo resp = response.body();
                     if (resp != null) {
-                        TextView title = DetailsActivity.this.findViewById(R.id.dtitle);
+                        TextView title = DetailsActivity2.this.findViewById(R.id.dtitle2);
                         title.setText(resp.getTitle());
 
-                        TextView genre = DetailsActivity.this.findViewById(R.id.dgenre);
-                        genre.setText(resp.getGenre());
+                        TextView genre = DetailsActivity2.this.findViewById(R.id.dgenre2);
+                        genre.setText(resp.getDirector());
 
-                        TextView rated = DetailsActivity.this.findViewById(R.id.drated);
-                        rated.setText(resp.getRated());
+                        TextView rated = DetailsActivity2.this.findViewById(R.id.drated2);
+                        rated.setText(resp.getWriter());
 
-                        TextView plotOfTheMovie = DetailsActivity.this.findViewById(R.id.plotOfTheMovie);
-                        plotOfTheMovie.setText(resp.getPlot());
+                        TextView plotOfTheMovie = DetailsActivity2.this.findViewById(R.id.plotOfTheMovie2);
+                        plotOfTheMovie.setText(resp.getActors());
 
-                        TextView godinaNastanka = DetailsActivity.this.findViewById(R.id.godinaNastanka);
-                        godinaNastanka.setText(resp.getYear());
+                        TextView godinaNastanka = DetailsActivity2.this.findViewById(R.id.godinaNastanka2);
+                        godinaNastanka.setText("1/12/2020");
 
-                        ImageView poster = DetailsActivity.this.findViewById(R.id.dposter);
+
+
+                        ImageView poster = DetailsActivity2.this.findViewById(R.id.dposter2);
                         Picasso.get().load(resp.getPoster()).into(poster);
                     }
                 }
@@ -60,7 +63,7 @@ public class DetailsActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<MovieInfo> call, Throwable t) {
-                Toast.makeText(DetailsActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DetailsActivity2.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -76,7 +79,7 @@ public class DetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.details_activity_correct);
+        setContentView(R.layout.details_activity_correct2);
     }
 
 }

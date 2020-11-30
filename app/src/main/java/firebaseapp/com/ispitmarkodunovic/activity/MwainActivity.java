@@ -419,7 +419,9 @@ public class MwainActivity extends AppCompatActivity implements DialogCustom1Too
         favoritesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MwainActivity.this, "From Fav", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MwainActivity.this, "From ActorDetails", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MwainActivity.this,ActorDetails.class);
+                startActivity(intent);
             }
         });
         splashScreenBSettings = findViewById(R.id.splash_screen_settings_new);
